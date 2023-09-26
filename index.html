@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="shortcut icon" href="favicon.png" type="image/x.icon" /> -->
+    <title>Alarm Clock</title>
+
+    <!--External CSS File-->
+    <link rel="stylesheet" href="styles.css" />
+    <!--------------------------------------------------------------------------------------->
+  </head>
+  <body onload="initClock()">
+    <div class="container">
+      <!--Analog Clock Style-->
+      <div class="clock">
+        <div class="circle" id="sc" style="--clr: #04fc43"><i></i></div>
+        <div class="circle circle2" id="mn" style="--clr: #fee800"><i></i></div>
+        <div class="circle circle3" id="hr" style="--clr: #ff2972"><i></i></div>
+
+        <span style="--i: 1"><b>1</b></span>
+        <span style="--i: 2"><b>2</b></span>
+        <span style="--i: 3"><b>3</b></span>
+        <span style="--i: 4"><b>4</b></span>
+        <span style="--i: 5"><b>5</b></span>
+        <span style="--i: 6"><b>6</b></span>
+        <span style="--i: 7"><b>7</b></span>
+        <span style="--i: 8"><b>8</b></span>
+        <span style="--i: 9"><b>9</b></span>
+        <span style="--i: 10"><b>10</b></span>
+        <span style="--i: 11"><b>11</b></span>
+        <span style="--i: 12"><b>12</b></span>
+      </div>
+      <!--------------------------------------------------------------------------------------->
+
+      <!--------------------------------------------------------------------------------------->
+    </div>
+
+    <!--Alarm Clock-->
+    <div class="alarm">
+      <div class="datetime">
+        <div class="date">
+          <div class="heading">ALARM CLOCK</div>
+          <!-- <span id="month">Month</span>, <span id="dayNum">00</span>,
+          <span id="dayName">Day</span> -->
+          <span> Current Time </span>
+        </div>
+        <div id="ytime">
+          <div id="yhours" style="--clr: #ff2972">00</div>
+          <div id="yminutes" style="--clr: #fee800">00</div>
+          <div id="yseconds" style="--clr: #04fc43">00</div>
+          <div id="yampm">AM</div>
+        </div>
+      </div>
+
+      <div class="setAlarm">
+        <div class="column">
+          <select title="hour">
+            <option value="setHour" selected hidden>Hour</option>
+          </select>
+        </div>
+
+        <div class="column">
+          <select title="minute">
+            <option value="setMinute" selected hidden>Minute</option>
+          </select>
+        </div>
+
+        <div class="column">
+          <select title="second">
+            <option value="setSeconds" selected hidden>Seconds</option>
+          </select>
+        </div>
+
+        <div class="column">
+          <select title="phase">
+            <option value="AM/PM" selected hidden>AM/PM</option>
+          </select>
+        </div>
+      </div>
+      <button id="btn-setAlarm" type="submit">Set Alarm</button>
+
+      <button type="button" id="btn-stopAlarm" onclick="stopAlarm()">
+        Stop Alarm
+      </button>
+
+      <hr />
+
+      <h3 id="alarm-h3">Your Set Alarms</h3>
+
+      <div class="alarmList"></div>
+    </div>
+
+    <!-- Stop Watch -->
+    <div id="stopwatch">
+      <div class="watch">
+        <div class="heading">STOP WATCH</div>
+        <div class="outer-circle">
+          <div class="inner-circle">
+            <span class="text minute" data-minute>0 :</span>
+            <span class="text second" data-second>&nbsp;0 : </span>
+            <span class="text milisecond" data-milisecond>&nbsp;0</span>
+          </div>
+        </div>
+        <div class="button-wrapper">
+          <button class="button hidden" data-reset>Reset</button>
+          <button class="button" data-play>Play</button>
+          <button class="button hidden" data-lap>Lap</button>
+        </div>
+        <ul class="laps" data-laps>
+          <!-- <li class="lap-item">
+              <span class="number"> #01</span>
+              <span class="time-stamp"> 02 : 09 : 00</span>
+            </li> -->
+        </ul>
+        <button class="lap-clear-button hidden" data-clear-all>Clear</button>
+      </div>
+    </div>
+
+    <!--External Javascript File-->
+    <script src="script.js"></script>
+  </body>
+</html>
